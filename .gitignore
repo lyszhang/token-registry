@@ -9,7 +9,6 @@ yarn-error.log
 /build
 /types
 /cache
-/artifacts
 /contracts/artifacts
 /contracts/*/artifacts
 /contracts/.deps
