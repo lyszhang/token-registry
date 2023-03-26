@@ -1,35 +1,13 @@
-require("@typechain/hardhat");
+require('@nomicfoundation/hardhat-toolbox')
+require("@openzeppelin/hardhat-upgrades");
 require("@nomiclabs/hardhat-ethers");
-require("@nomiclabs/hardhat-waffle");
-require("hardhat-watcher");
-require("hardhat-gas-reporter");
-require("solidity-coverage");
 
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
+/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: {
-    version: "0.8.4",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200,
-      },
-    },
-  },
-  typechain: {
-    outDir: "src/contracts",
-    alwaysGenerateOverloads: true,
-  },
-  watcher: {
-    test: {
-      tasks: ["compile", "test"],
-      files: ["./contracts", "./test"],
-    },
-  },
-  gasReporter: {
-    coinmarketcap: "e3dd106b-9644-45ac-8f61-98614b973bca",
-    currency: "USD",
-  },
-};
+  solidity: '0.8.17',
+  networks: {
+    hardhat: {
+      blockGasLimit: 50000000000
+    }
+  }
+}
